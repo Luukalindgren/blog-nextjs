@@ -1,11 +1,7 @@
-
-export default function Home() {
-    return (
-      <main className="flex flex-col items-center justify-between min-h-screen p-24">
-        <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
-          <h1>Käyttäjän tiedot:</h1>
-        </div>
-      </main>
-    )
-  }
-  
+export default function Account() {
+  return (
+    <main className="container min-h-screen px-10 mx-auto mb-8 font-mono">
+      <h2 className="py-6 text-lg font-bold">Käyttäjän tiedot:</h2>
+    </main>
+  );
+}
