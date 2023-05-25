@@ -1,5 +1,6 @@
-import PostCard from "@/components/PostCard";
+import BlogPostCard from "@/components/BlogPostCard";
 import PostWidget from "@/components/PostWidget";
+import { supabase } from "./supabaseClient";
 
 const posts = [
   {
@@ -33,7 +34,7 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post, index) =>
-            PostCard({ title: post.title, desc: post.excerpt, index: index })
+            BlogPostCard({ title: post.title, desc: post.excerpt, index: index })
           )}
         </div>
         <div className="col-span-1 lg:col-span-4">
