@@ -20,6 +20,7 @@ export default async function Books() {
                   author: post.author,
                   desc: post.summary,
                   index: index,
+                  rating: post.rating,
                 })
               )}
         </div>
