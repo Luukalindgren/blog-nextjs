@@ -8,7 +8,7 @@ export default function Header() {
         <div className="block md:float-left">
           <Link href="/">
             <h1 className="text-4xl font-bold text-white cursor-pointer">
-              Luuka's blog
+              Luukan Blogi
             </h1>
           </Link>
         </div>
@@ -21,6 +21,11 @@ export default function Header() {
           <Link href="/books">
             <span className="mt-2 ml-4 font-semibold text-white align-middle cursor-pointer md:float-right">
               Kirjatiivistelmät
+            </span>
+          </Link>
+          <Link href="/">
+            <span className="mt-2 ml-4 font-semibold text-white align-middle cursor-pointer md:float-right">
+              Blogi
             </span>
           </Link>
         </div>
