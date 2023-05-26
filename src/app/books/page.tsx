@@ -1,8 +1,8 @@
 import BookPostCard from "@/components/BookPostCard";
 import PostWidget from "@/components/PostWidget";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../utils/supabaseClient";
 
-export const revalidate = 3600;
+export const revalidate = 0;
 
 export default async function Books() {
 
