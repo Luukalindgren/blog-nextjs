@@ -2,7 +2,10 @@ import BookPostCard from "@/components/BookPostCard";
 import PostWidget from "@/components/PostWidget";
 import { supabase } from "../supabaseClient";
 
+export const revalidate = 3600;
+
 export default async function Books() {
+
   const { data: bookSummaries } = await supabase
     .from("book_summaries")
     .select("*");
