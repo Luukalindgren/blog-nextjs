@@ -8,19 +8,22 @@ export default function Header() {
       <div className="flex items-center space-x-2 ">
         <Link href="/">
           <Image
+          className="transition duration-500 cursor-pointer hover:opacity-80 hover:scale-105"
             src="/LL.png"
             width={100}
             height={100}
             alt="Luuka Lindgren Logo"
           />
         </Link>
+        <Link href="/">
           <h1 className="text-4xl transition duration-500 cursor-pointer hover:text-gray-100/80">
             :n Blogi
           </h1>
+        </Link>
       </div>
 
       <div className="flex items-center py-8 space-x-2 md:space-x-6">
-        <Link href="/">
+        <Link href="/blog">
           <span className="align-middle transition duration-500 cursor-pointer hover:text-gray-100/80">
             Blogi
           </span>
