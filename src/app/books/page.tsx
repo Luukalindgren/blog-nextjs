@@ -1,11 +1,10 @@
 import BookPostCard from "@/components/BookPostCard";
 import PostWidget from "@/components/PostWidget";
-import { supabase } from "../utils/supabaseClient";
+import { supabase } from "../lib/supabaseClient";
 
 export const revalidate = 0;
 
 export default async function Books() {
-
   const { data: bookSummaries } = await supabase
     .from("book_summaries")
     .select("*");
@@ -17,12 +16,12 @@ export default async function Books() {
         <div className="col-span-1 lg:col-span-8">
           {!bookSummaries
             ? ""
-            : bookSummaries.map((post, index) =>
+            : bookSummaries.map((post) =>
                 BookPostCard({
                   title: post.title,
                   author: post.author,
                   desc: post.summary,
-                  index: index,
+                  index: post.id,
                   rating: post.rating,
                 })
               )}
