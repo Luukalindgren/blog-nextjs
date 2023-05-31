@@ -1,3 +1,5 @@
+import { Rating } from "@mui/material";
+
 export default function BookPostCard(prop: {
   title: string;
   desc: string;
@@ -19,9 +21,9 @@ export default function BookPostCard(prop: {
           <br />
         </p>
       ))}
-      <p className="mt-4 mb-2 font-semibold text-center">
-        Arvosana: {prop.rating}/5
-      </p>
+      <div className="pt-4 text-center">
+        <Rating defaultValue={prop.rating} precision={0.5} readOnly />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import BookPostCard from "@/components/BookPostCard";
 import PostWidget from "@/components/PostWidget";
 import { supabase } from "../lib/supabaseClient";

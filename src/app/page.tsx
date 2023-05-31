@@ -1,3 +1,5 @@
+'use client'
+
 import BlogPostPreview from "@/components/BlogPostPreview";
 import BookPostPreview from "@/components/BookPostPreview";
 import { supabase } from "./lib/supabaseClient";
