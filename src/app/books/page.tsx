@@ -1,8 +1,8 @@
 "use client";
 
 import BookPostCard from "@/components/BookPostCard";
-import PostWidget from "@/components/PostWidget";
 import { supabase } from "../lib/supabaseClient";
+import BookPostWidget from "@/components/BookPostWidget";
 
 export const revalidate = 0;
 
@@ -30,7 +30,7 @@ export default async function Books() {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
-            <PostWidget />
+            <BookPostWidget />
           </div>
         </div>
       </div>
