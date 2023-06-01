@@ -29,7 +29,7 @@ export default function BlogPostWidget() {
   return (
     <div className="w-full  h-[640px] p-4 my-4 rounded-lg bg-black/10 shadow-lg">
       <h2 className="font-semibold text-center ">Kirjoita postaus</h2>
-      <div className="px-4 py-8">
+      <div className="px-4 py-6">
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
             label="Otsikko"

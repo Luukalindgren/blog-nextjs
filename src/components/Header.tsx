@@ -10,15 +10,11 @@ export default function Header() {
           <Image
           className="transition duration-500 cursor-pointer hover:opacity-80 hover:scale-105"
             src="/LL.png"
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             alt="Luuka Lindgren Logo"
+            priority={true}
           />
-        </Link>
-        <Link href="/">
-          <h1 className="text-4xl transition duration-500 cursor-pointer hover:text-gray-100/80">
-            :n Blogi
-          </h1>
         </Link>
       </div>
 
