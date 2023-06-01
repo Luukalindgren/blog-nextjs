@@ -7,8 +7,9 @@ import "./globals.css";
 // Done Make backend for blog posts and book summaries (Supabase?)
 // Done Make site fetch data from backend
 // Done Make posts appear logically, now they are not showing new lines etc.
-// - Make ratings appear as stars or some images
-// - Add functionality to add new posts and book summaries
+// DONE Make ratings appear as stars or some images
+// - Make all pages responsive, now they are only desktop friendly
+// DONE Add functionality to add new posts and book summaries
 // - Add sorting system to book summaries (by rating, by date, alphabetically etc.)
 // - Add account system (Register, log in, log out etc.)
 // - Add functionality to edit and delete posts and book summaries
