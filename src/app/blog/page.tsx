@@ -1,5 +1,5 @@
 import BlogPostCard from "@/components/BlogPostCard";
-import PostWidget from "@/components/PostWidget";
+import BlogPostWidget from "@/components/BlogPostWidget";
 import { supabase } from "../lib/supabaseClient";
 
 export const revalidate = 0;
@@ -25,7 +25,7 @@ export default async function Blog() {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
-            <PostWidget />
+            <BlogPostWidget />
           </div>
         </div>
       </div>
