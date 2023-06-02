@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { MenuItem, TextField } from "@mui/material";
 import { supabase } from "@/app/lib/supabaseClient";
 
-const ratingOptions = [0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5];
+const ratingOptions = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
 export default function BookPostWidget() {
   const { register, handleSubmit, reset } = useForm();
@@ -24,10 +24,10 @@ export default function BookPostWidget() {
         throw new Error(error.message);
       }
       console.log("New book summary created: " + data.title);
+      reset();
     } catch (error) {
       console.log("Error creating new book summary.");
     }
-    reset();
   };
 
   return (
@@ -81,7 +81,7 @@ export default function BookPostWidget() {
                 {rating}
               </MenuItem>
             ))}
-            </TextField>
+          </TextField>
           <button
             type="submit"
             className="w-full px-16 py-4 my-4 text-center align-middle transition duration-500 shadow-xl bg-black/20 rounded-xl hover:bg-black/40 active:scale-95"

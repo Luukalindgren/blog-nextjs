@@ -20,10 +20,10 @@ export default function BlogPostWidget() {
         throw new Error(error.message);
       }
       console.log("New blog post created: " + data.title);
+      reset();
     } catch (error) {
       console.log("Error creating new blog post");
     }
-    reset();
   };
 
   return (
