@@ -1,6 +1,6 @@
 import BlogPostCard from "@/components/BlogPostCard";
 import BlogPostWidget from "@/components/BlogPostWidget";
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from "../supabaseClient";
 
 export const revalidate = 0;
 

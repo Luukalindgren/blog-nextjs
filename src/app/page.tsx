@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import BlogPostPreview from "@/components/BlogPostPreview";
 import BookPostPreview from "@/components/BookPostPreview";
-import { supabase } from "./lib/supabaseClient";
+import { supabase } from "./supabaseClient";
 
 export const revalidate = 0;
 
