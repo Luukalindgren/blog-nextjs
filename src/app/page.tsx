@@ -2,9 +2,9 @@
 
 import BlogPostPreview from "@/components/BlogPostPreview";
 import BookPostPreview from "@/components/BookPostPreview";
-import { supabase } from "./supabaseClient";
+import { supabase } from "../lib/supabaseClient";
 import { useEffect, useState } from "react";
-import { Book, Post } from "@/components/types";
+import type { Book, Post } from "@/lib/types";
 
 export const revalidate = 0;
 

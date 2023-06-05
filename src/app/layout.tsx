@@ -9,6 +9,7 @@ import "./globals.css";
 // Done Make posts appear logically, now they are not showing new lines etc.
 // DONE Make ratings appear as stars or some images
 // - Make all pages responsive, now they are only desktop friendly
+// - Fix render not mathcing DB data, tried something on the main page with useState and useEffect, works but not well with the loading.tsx file...
 // DONE Add functionality to add new posts and book summaries
 // - Add sorting system to book summaries (by rating, by date, alphabetically etc.)
 // - Add account system (Register, log in, log out etc.)

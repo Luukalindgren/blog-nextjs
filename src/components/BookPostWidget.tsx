@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { MenuItem, TextField } from "@mui/material";
-import { supabase } from "@/app/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 const ratingOptions = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
@@ -55,7 +55,7 @@ export default function BookPostWidget() {
           <TextField
             className="mt-4"
             label="Kirjatiivistelmä"
-            id="post"
+            id="summary"
             type="string"
             fullWidth
             multiline

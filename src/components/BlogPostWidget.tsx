@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
-import { supabase } from "@/app/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function BlogPostWidget() {
   const { register, handleSubmit, reset } = useForm();
