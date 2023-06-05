@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { AuthContextProvider } from "./context";
 
 //TODO:
 // Done Make backend for blog posts and book summaries (Supabase?)
@@ -10,6 +11,7 @@ import "./globals.css";
 // DONE Make ratings appear as stars or some images
 // - Make all pages responsive, now they are only desktop friendly
 // - Fix render not mathcing DB data, tried something on the main page with useState and useEffect, works but not well with the loading.tsx file...
+// - Add subscription to Supabase to make the site update automatically when new posts are added
 // DONE Add functionality to add new posts and book summaries
 // - Add sorting system to book summaries (by rating, by date, alphabetically etc.)
 // - Add account system (Register, log in, log out etc.)
@@ -30,12 +32,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="fi">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <AuthContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AuthContextProvider>
       </body>
     </html>
   );
