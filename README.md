@@ -2,4 +2,4 @@
 
 ## Blog and book summary site!
 
-Experimental project to trying first time Nextjs 13, TypeScript and Supabase.
+Experimental project to learn following technologies: Nextjs 13, TypeScript and Supabase.
