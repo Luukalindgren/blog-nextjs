@@ -1,5 +1,5 @@
-import BlogPostCard from "@/components/BlogPostCard";
-import BlogPostWidget from "@/components/BlogPostWidget";
+import BlogPostCard from "@/components/Blog/BlogPostCard";
+import BlogPostWidget from "@/components/Blog/BlogPostWidget";
 import { supabase } from "../../lib/supabaseClient";
 
 export const revalidate = 0;

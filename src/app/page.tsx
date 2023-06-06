@@ -1,7 +1,7 @@
 "use client";
 
-import BlogPostPreview from "@/components/BlogPostPreview";
-import BookPostPreview from "@/components/BookPostPreview";
+import BlogPostPreview from "@/components/Blog/BlogPostPreview";
+import BookPostPreview from "@/components/Book/BookPostPreview";
 import { supabase } from "../lib/supabaseClient";
 import { useEffect, useState } from "react";
 import type { Book, Post } from "@/lib/types";

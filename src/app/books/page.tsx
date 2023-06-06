@@ -1,8 +1,8 @@
 "use client";
 
-import BookPostCard from "@/components/BookPostCard";
+import BookPostCard from "@/components/Book/BookPostCard";
 import { supabase } from "../../lib/supabaseClient";
-import BookPostWidget from "@/components/BookPostWidget";
+import BookPostWidget from "@/components/Book/BookPostWidget";
 
 export const revalidate = 0;
 
