@@ -58,6 +58,7 @@ export default function Login() {
           label="Sähköposti"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          autoComplete="email"
         />
         <TextField
           type="password"
@@ -65,6 +66,7 @@ export default function Login() {
           label="Salasana"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          autoComplete="current-password"
         />
         <button
           className="px-16 py-4 transition duration-500 shadow-xl bg-black/20 rounded-xl hover:bg-black/40 active:scale-95"
