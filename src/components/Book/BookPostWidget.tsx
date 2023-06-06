@@ -3,11 +3,15 @@
 import { useForm } from "react-hook-form";
 import { MenuItem, TextField } from "@mui/material";
 import { supabase } from "@/lib/supabaseClient";
+import { useAuthContext } from "@/app/context";
+import Link from "next/link";
 
 const ratingOptions = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
 export default function BookPostWidget() {
   const { register, handleSubmit, reset } = useForm();
+
+  const { user } = useAuthContext();
 
   const onSubmit = async (data: any) => {
     try {
@@ -31,9 +35,25 @@ export default function BookPostWidget() {
   };
 
   return (
-    <div className="w-full  h-[640px] p-4 my-4 rounded-lg bg-black/10 shadow-lg">
+    <div
+      className={
+        user
+          ? "w-full  h-[640px] p-4 my-4 rounded-lg bg-black/10 shadow-lg"
+          : "w-full  h-[640px] p-4 my-4 rounded-lg bg-black/30 shadow-lg "
+      }
+    >
       <h2 className="font-semibold text-center ">Kirjoita tiivistelmä</h2>
-      <div className="px-4 py-6">
+      {!user && (
+        <div className="absolute p-4 text-center transform -translate-x-1/2 -translate-y-1/2 rounded-lg top-1/2 left-1/2 bg-white/40">
+          <p>Kirjaudu sisään kirjoittaaksesi</p>
+          <Link href="/account">
+            <button className="w-full px-16 py-4 my-4 text-center align-middle transition duration-500 shadow-xl bg-black/20 rounded-xl hover:bg-black/40 active:scale-95">
+              Kirjaudu
+            </button>
+          </Link>
+        </div>
+      )}
+      <div className={user ? "px-4 py-6" : "px-4 py-6 pointer-events-none"}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
             label="Kirjan nimi"
