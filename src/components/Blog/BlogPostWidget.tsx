@@ -5,11 +5,21 @@ import { TextField } from "@mui/material";
 import { supabase } from "@/lib/supabaseClient";
 import { useAuthContext } from "@/app/context";
 import Link from "next/link";
+import CustomModal from "../CustomModal";
+import { useState } from "react";
 
 export default function BlogPostWidget() {
   const { register, handleSubmit, reset } = useForm();
+  const [open, setOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
 
   const { user } = useAuthContext();
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+    if (modalText === "Blogin lisääminen onnistui!") window.location.reload();
+  };
 
   const onSubmit = async (data: any) => {
     try {
@@ -20,13 +30,11 @@ export default function BlogPostWidget() {
           post: data.post,
         });
 
-      if (error) {
-        throw new Error(error.message);
-      }
-      console.log("New blog post created: " + data.title);
-      reset();
+      setModalText("Blogin lisääminen onnistui!");
+      handleOpen();
     } catch (error) {
-      console.log("Error creating new blog post");
+      setModalText("Blogin lisääminen epäonnistui!");
+      handleOpen();
     }
   };
 
@@ -79,6 +87,7 @@ export default function BlogPostWidget() {
           </button>
         </form>
       </div>
+      <CustomModal open={open} close={handleClose} text={modalText} />
     </div>
   );
 }

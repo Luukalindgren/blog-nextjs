@@ -5,13 +5,24 @@ import { MenuItem, TextField } from "@mui/material";
 import { supabase } from "@/lib/supabaseClient";
 import { useAuthContext } from "@/app/context";
 import Link from "next/link";
+import CustomModal from "../CustomModal";
+import { useState } from "react";
 
 const ratingOptions = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
 export default function BookPostWidget() {
   const { register, handleSubmit, reset } = useForm();
+  const [open, setOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
 
   const { user } = useAuthContext();
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+    if (modalText === "Tiivistelmän lisääminen onnistui!")
+      window.location.reload();
+  };
 
   const onSubmit = async (data: any) => {
     try {
@@ -24,13 +35,12 @@ export default function BookPostWidget() {
           author: data.author,
         });
 
-      if (error) {
-        throw new Error(error.message);
-      }
-      console.log("New book summary created: " + data.title);
-      reset();
+      setModalText("Tiivistelmän lisääminen onnistui!");
+      handleOpen();
     } catch (error) {
       console.log("Error creating new book summary.");
+      setModalText("Tiivistelmän lisääminen epäonnistui!");
+      handleOpen();
     }
   };
 
@@ -110,6 +120,7 @@ export default function BookPostWidget() {
           </button>
         </form>
       </div>
+      <CustomModal open={open} close={handleClose} text={modalText} />
     </div>
   );
 }
