@@ -20,6 +20,7 @@ export default async function Blog() {
                   date={post.inserted_at}
                   desc={post.post}
                   index={post.id}
+                  key={post.id}
                 />
               ))}
         </div>
