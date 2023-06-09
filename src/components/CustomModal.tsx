@@ -13,7 +13,7 @@ const style = {
   p: 4,
 };
 
-export default function CustomModal({ open, close, text }) {
+export default function CustomModal({ open, close, text, clicked }) {
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -36,7 +36,7 @@ export default function CustomModal({ open, close, text }) {
           <div className="flex">
             <button
               className="px-16 py-4 mx-auto my-4 transition duration-500 shadow-xl bg-black/20 rounded-xl hover:bg-black/40 active:scale-95"
-              onClick={close}
+              onClick={clicked}
             >
               OK
             </button>

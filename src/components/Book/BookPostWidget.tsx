@@ -120,7 +120,7 @@ export default function BookPostWidget() {
           </button>
         </form>
       </div>
-      <CustomModal open={open} close={handleClose} text={modalText} />
+      <CustomModal open={open} close={handleClose} text={modalText} clicked={handleClose} />
     </div>
   );
 }

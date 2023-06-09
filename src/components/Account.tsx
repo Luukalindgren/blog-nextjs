@@ -45,6 +45,7 @@ export default function Account() {
         open={open}
         close={handleClose}
         text="Kirjauduttu ulos onnistuneesti"
+        clicked={handleClose}
       />
     </div>
   );

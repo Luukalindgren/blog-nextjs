@@ -103,7 +103,7 @@ export default function Login() {
           Luo tili
         </button>
       </div>
-      <CustomModal open={open} close={handleClose} text={modalText} />
+      <CustomModal open={open} close={handleClose} text={modalText} clicked={handleClose}/>
     </div>
   );
 }
