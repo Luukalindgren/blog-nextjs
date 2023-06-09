@@ -14,11 +14,12 @@ import { AuthContextProvider } from "./context";
 // - Fix Links to specific summaries, was working, but now not anymore, probably because of the above
 // - Make loading to be like skeleton loading, now it's just a circle that spins
 // - Add subscription to Supabase to make the site update automatically when new posts are added
-// - Add modals(popups) for sign in, sign up, log out, post and summary adding, editing and deleting etc.
+// DONE Add modals(popups) for sign in, sign up, log out, post and summary adding, editing and deleting etc.
 // DONE Add functionality to add new posts and book summaries
 // - Add sorting system to book summaries (by rating, by date, alphabetically etc.)
 // DONE Add account system (Register, log in, log out etc.)
-// - Add functionality to edit and delete posts and book summaries
+// DONE Add functionality to delete posts and book summaries
+// - Add functionality to edit posts and book summaries
 // - Add functionality to comment on posts and book summaries
 // - Add pagination to posts and book summaries, 2-3 posts per page
 // DONE Make post adding, editing and deleting to be available only for logged in users
