@@ -18,15 +18,15 @@ export default async function Books() {
         <div className="col-span-1 lg:col-span-8">
           {!bookSummaries
             ? ""
-            : bookSummaries.map((post) =>
-                BookPostCard({
-                  title: post.title,
-                  author: post.author,
-                  desc: post.summary,
-                  index: post.id,
-                  rating: post.rating,
-                })
-              )}
+            : bookSummaries.map((post) => (
+              <BookPostCard
+                title={post.title}
+                desc={post.post}
+                index={post.id}
+                author={post.author}
+                rating={post.rating}
+              />
+            ))}
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">

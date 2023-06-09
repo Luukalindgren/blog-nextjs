@@ -14,14 +14,14 @@ export default async function Blog() {
         <div className="col-span-1 lg:col-span-8">
           {!posts
             ? ""
-            : posts.map((post) =>
-                BlogPostCard({
-                  title: post.title,
-                  date: post.inserted_at,
-                  desc: post.post,
-                  index: post.id,
-                })
-              )}
+            : posts.map((post) => (
+                <BlogPostCard
+                  title={post.title}
+                  date={post.inserted_at}
+                  desc={post.post}
+                  index={post.id}
+                />
+              ))}
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
