@@ -1,19 +1,25 @@
 "use client";
 
 import { supabase } from "@/lib/supabaseClient";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import type { User } from "@supabase/supabase-js";
 
-const AuthContext = createContext({});
+interface AuthContextProps {
+  user: User | null;
+}
 
-export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(false);
+const AuthContext = createContext<AuthContextProps>({
+  user: null,
+});
+
+export const AuthContextProvider: React.FC<{children: ReactNode}> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
 
   const onAuthStateChange = async () => {
     try {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) setUser(user);
+      const { data } = await supabase.auth.getUser();
+      if (data && data.user) setUser(data.user as User);
+      else setUser(null);
       console.log(user);
     } catch (error) {
       console.log(error);
@@ -25,7 +31,9 @@ export const AuthContextProvider = ({ children }) => {
     onAuthStateChange();
   }, []);
 
-  return <AuthContext.Provider value={{user}}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+  );
 };
 
 export const useAuthContext = () => useContext(AuthContext);

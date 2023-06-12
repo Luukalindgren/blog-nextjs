@@ -34,7 +34,7 @@ export default function BookPostCard(prop: {
       id={`${prop.index}`}
       className="p-4 my-4 rounded-lg shadow-lg bg-black/10"
     >
-      {user.email === "luuka.lindgren@gmail.com" && (
+      {user?.email === "luuka.lindgren@gmail.com" && (
         <div className="relative">
           <button
             className="absolute right-0 px-6 py-2 transition duration-500 shadow-xl bg-black/20 rounded-xl hover:bg-black/40 active:scale-95"

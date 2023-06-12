@@ -4,6 +4,7 @@ import { useAuthContext } from "@/app/context";
 import { supabase } from "@/lib/supabaseClient";
 import { useState } from "react";
 import CustomModal from "./CustomModal";
+import type { User } from "@supabase/supabase-js";
 
 export default function Account() {
   const { user } = useAuthContext();
@@ -27,11 +28,11 @@ export default function Account() {
       </h2>
       <h3>
         <span className="font-semibold">Sähköposti: </span>
-        {user.email}
+        {user?.email}
       </h3>
       <h3>
         <span className="font-semibold">Käyttäjätunnus: </span>
-        {user.id}
+        {user?.id}
       </h3>
       <div className="flex">
         <button
