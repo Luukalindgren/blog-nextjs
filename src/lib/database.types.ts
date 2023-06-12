@@ -9,25 +9,59 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      posts: {
+      blog_posts: {
         Row: {
-          content: string;
-          created_at: string;
           id: number;
-          user_id: string | null;
+          inserted_at: string;
+          post: string | null;
+          title: string | null;
+          updated_at: string;
         };
         Insert: {
-          content: string;
-          created_at?: string;
           id?: number;
-          user_id?: string | null;
+          inserted_at?: string;
+          post?: string | null;
+          title?: string | null;
+          updated_at?: string;
         };
         Update: {
-          content?: string;
-          created_at?: string;
           id?: number;
-          user_id?: string | null;
+          inserted_at?: string;
+          post?: string | null;
+          title?: string | null;
+          updated_at?: string;
         };
+        Relationships: [];
+      };
+      book_summaries: {
+        Row: {
+          author: string | null;
+          id: number;
+          inserted_at: string;
+          rating: number | null;
+          summary: string | null;
+          title: string | null;
+          updated_at: string;
+        };
+        Insert: {
+          author?: string | null;
+          id?: number;
+          inserted_at?: string;
+          rating?: number | null;
+          summary?: string | null;
+          title?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          author?: string | null;
+          id?: number;
+          inserted_at?: string;
+          rating?: number | null;
+          summary?: string | null;
+          title?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
       };
     };
     Views: {
