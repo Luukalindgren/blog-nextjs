@@ -4,7 +4,6 @@ import { useAuthContext } from "@/app/context";
 import { supabase } from "@/lib/supabaseClient";
 import { useState } from "react";
 import CustomModal from "./CustomModal";
-import type { User } from "@supabase/supabase-js";
 
 export default function Account() {
   const { user } = useAuthContext();

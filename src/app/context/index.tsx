@@ -20,7 +20,7 @@ export const AuthContextProvider: React.FC<{children: ReactNode}> = ({ children 
       const { data } = await supabase.auth.getUser();
       if (data && data.user) setUser(data.user as User);
       else setUser(null);
-      console.log(user);
+      console.log(data.user);
     } catch (error) {
       console.log(error);
     } finally {
