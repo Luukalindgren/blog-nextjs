@@ -1,6 +1,5 @@
 "use client";
 import { CircularProgress } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 export default function Loading() {
   return (

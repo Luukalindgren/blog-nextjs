@@ -1,20 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { TextField } from "@mui/material";
 import { supabase } from "@/lib/supabaseClient";
-import { useAuthContext } from "@/app/context";
 import CustomModal from "./CustomModal";
 
 export default function Login() {
-  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
   const [modalText, setModalText] = useState("");
-  const router = useRouter();
-  const { user } = useAuthContext();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -52,7 +47,6 @@ export default function Login() {
       return;
     }
     try {
-      setLoading(true);
       await supabase.auth.signInWithPassword({
         email,
         password,
