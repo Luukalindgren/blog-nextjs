@@ -12,27 +12,28 @@ export default async function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [bookSummaries, setBookSummaries] = useState<Book[]>([]);
 
-  const fetchPosts = async () => {
-    try {
-      const { data } = await supabase.from("blog_posts").select("*");
-      if (!data) return;
-      setPosts(data as Post[]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  const fetchBookSummaries = async () => {
-    try {
-      const { data } = await supabase.from("book_summaries").select("*");
-      if (!bookSummaries) return;
-      setBookSummaries(data as Book[]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const { data } = await supabase.from("blog_posts").select("*");
+        if (!data) return;
+        setPosts(data as Post[]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    const fetchBookSummaries = async () => {
+      try {
+        const { data } = await supabase.from("book_summaries").select("*");
+        if (!bookSummaries) return;
+        setBookSummaries(data as Book[]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchPosts();
     fetchBookSummaries();
   }, []);
