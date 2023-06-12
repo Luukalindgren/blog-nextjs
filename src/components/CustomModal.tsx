@@ -13,7 +13,7 @@ const style = {
   p: 4,
 };
 
-export default function CustomModal({ open, close, text, clicked }) {
+export default function CustomModal({ open, close, text, clicked }: {open: boolean, close: () => void, text: string, clicked: () => void}) {
   return (
     <Modal
       aria-labelledby="transition-modal-title"
