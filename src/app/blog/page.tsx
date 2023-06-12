@@ -1,3 +1,5 @@
+"use client";
+
 import BlogPostCard from "@/components/Blog/BlogPostCard";
 import BlogPostWidget from "@/components/Blog/BlogPostWidget";
 import { supabase } from "@/lib/supabaseClient";
