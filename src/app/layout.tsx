@@ -25,6 +25,10 @@ import { AuthContextProvider } from "./context";
 // DONE Publish site to some hosting service (Azure or Vercel?)
 // - Finish README.md
 // - Add styling and maybe animations?
+//
+// - Add "Reading now" card after the book summaries
+// - Add a horizontal scrolling container for book summary cards on top of the book summaries page, with anchor links to the correct summary
+// 
 
 export const metadata: Metadata = {
   title: "Luuka's blog",
